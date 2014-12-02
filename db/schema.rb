@@ -32,11 +32,39 @@ ActiveRecord::Schema.define(version: 20141202231644) do
     t.datetime "updated_at"
   end
 
+  create_table "checkouts", force: true do |t|
+    t.integer  "tool_id"
+    t.integer  "user_id"
+    t.integer  "quantity"
+    t.datetime "checkout_date"
+    t.datetime "due_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "comments", force: true do |t|
     t.integer  "blogpost_id"
     t.integer  "user_id"
     t.text     "content"
     t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "details"
+    t.string   "title"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "classification"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tools", force: true do |t|
+    t.string   "name"
+    t.boolean  "available"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
