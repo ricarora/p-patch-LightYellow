@@ -35,8 +35,15 @@ group :test, :development do
   gem 'rspec-rails'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+ gem 'bcrypt', '~> 3.1.7'
+
+ gem 'rails_12factor'
+
+ gem "omniauth"
+
+ gem 'omniauth-twitter'
 
 # Use unicorn as the app server
 # gem 'unicorn'
