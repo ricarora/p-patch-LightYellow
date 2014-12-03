@@ -13,6 +13,8 @@ class SessionsController < ApplicationController
       else
         render :new
       end
+    elsif params[:provider] == "twitter"
+      twitter_auth
     else
 
     end
@@ -31,5 +33,17 @@ class SessionsController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def twitter_auth
+    auth_hash = request.env["omniauth.auth"]
+    login = Authentication.where(uid: auth_hash[:uid], provider: auth_hash[:provider])
+    if login.empty? 
+      Authentication.create(uid: auth_hash[:uid], provider: auth_hash[:provider])
+    else
+
+    end
   end
 end
