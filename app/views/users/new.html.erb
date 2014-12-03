@@ -7,26 +7,31 @@
       <div class="form-field">
         <%= f.label :name%>
         <%= f.text_field :name%>
+        <%= render "shared/error_messages", obj: @user, col: :name %>
       </div>
 
       <div class='form-field'>
         <%= f.label :email%>
         <%= f.text_field :email%>
+        <%= render "shared/error_messages", obj: @user, col: :email %>
       </div>
 
       <div class="form-field">
         <%= f.label :username %>
         <%= f.text_field :username%>
+        <%= render "shared/error_messages", obj: @user, col: :username %>
       </div>
 
       <div class="form-field">
         <%= f.label :password%>
         <%= f.password_field :password%>
+        <%= render "shared/error_messages", obj: @user, col: :password %>
       </div>
 
       <div class="form-field">
         <%= f.label :password_confirmation%>
         <%= f.password_field :password_confirmation%>
+        <%= render "shared/error_messages", obj: @user, col: :password_confirmation %>
       </div>
 
       <div class="form-field">
