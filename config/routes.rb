@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # Home Route
+  get 'home/index'
+
   # Comment Routes
   get 'comments/new'
   get 'comments/create'
