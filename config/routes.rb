@@ -1,45 +1,30 @@
 Rails.application.routes.draw do
 
+  # Comment Routes
   get 'comments/new'
-
   get 'comments/create'
-
   get 'comments/update'
-
   get 'comments/edit'
-
   get 'comments/destroy'
-
   get 'comments/index'
-
   get 'comments/show'
 
+  # User Routes
   get 'users/new'
-
   get 'users/create'
-
   get 'users/update'
-
   get 'users/edit'
-
   get 'users/destroy'
-
   get 'users/index'
-
   get 'users/show'
 
+  # Blogpost Routes
   get 'blogposts/new'
-
   get 'blogposts/create'
-
   get 'blogposts/update'
-
   get 'blogposts/edit'
-
   get 'blogposts/destroy'
-
   get 'blogposts/index'
-
   get 'blogposts/show'
 
   # Checkout Routes
