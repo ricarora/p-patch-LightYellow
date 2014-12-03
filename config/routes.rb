@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback",  to: "sessions#create",    as: :login
   post "/auth/:provider/callback", to: "sessions#create"
 
-  
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/update'
+  get 'sessions/edit'
+  get 'sessions/destroy'
+  get 'sessions/index'
+  get 'sessions/show'
+
   get 'comments/new'
 
   get 'comments/create'
