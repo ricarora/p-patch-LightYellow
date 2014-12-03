@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get "/auth/:provider/callback",  to: "sessions#create",    as: :login
+  post "/auth/:provider/callback", to: "sessions#create"
+
+  
   get 'comments/new'
 
   get 'comments/create'
