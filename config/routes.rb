@@ -42,60 +42,31 @@ Rails.application.routes.draw do
 
   get 'blogposts/show'
 
+  # Checkout Routes
   get 'checkouts/new'
-
   get 'checkouts/create'
-
   get 'checkouts/update'
-
   get 'checkouts/edit'
-
   get 'checkouts/destroy'
-
   get 'checkouts/index'
-
   get 'checkouts/show'
 
-  get 'checkout/new'
-
-  get 'checkout/create'
-
-  get 'checkout/update'
-
-  get 'checkout/edit'
-
-  get 'checkout/destroy'
-
-  get 'checkout/index'
-
-  get 'checkout/show'
-
+  # Tool Routes
   get 'tools/new'
-
   get 'tools/create'
-
   get 'tools/update'
-
   get 'tools/edit'
-
   get 'tools/destroy'
-
   get 'tools/index'
-
   get 'tools/show'
 
+  # Event routes
   get 'events/new'
-
   get 'events/create'
-
   get 'events/update'
-
   get 'events/edit'
-
   get 'events/destroy'
-
   get 'events/index'
-
   get 'events/show'
 
 
