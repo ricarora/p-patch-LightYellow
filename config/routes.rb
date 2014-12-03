@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'comments/new'
 
   get 'comments/create'
@@ -40,6 +41,63 @@ Rails.application.routes.draw do
   get 'blogposts/index'
 
   get 'blogposts/show'
+
+  get 'checkouts/new'
+
+  get 'checkouts/create'
+
+  get 'checkouts/update'
+
+  get 'checkouts/edit'
+
+  get 'checkouts/destroy'
+
+  get 'checkouts/index'
+
+  get 'checkouts/show'
+
+  get 'checkout/new'
+
+  get 'checkout/create'
+
+  get 'checkout/update'
+
+  get 'checkout/edit'
+
+  get 'checkout/destroy'
+
+  get 'checkout/index'
+
+  get 'checkout/show'
+
+  get 'tools/new'
+
+  get 'tools/create'
+
+  get 'tools/update'
+
+  get 'tools/edit'
+
+  get 'tools/destroy'
+
+  get 'tools/index'
+
+  get 'tools/show'
+
+  get 'events/new'
+
+  get 'events/create'
+
+  get 'events/update'
+
+  get 'events/edit'
+
+  get 'events/destroy'
+
+  get 'events/index'
+
+  get 'events/show'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
