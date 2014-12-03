@@ -37,4 +37,19 @@
 
 <div class="sign-in">
   <h2>Sign In</h2>
+  <%= form_tag login_path("internal") do%>
+    <div class="form-field">
+      <%= label_tag "user[username]", "Username" %>
+      <%= text_field_tag "user[username]" %>
+    </div>
+
+    <div class="form_field">
+      <%= label_tag "user[password]", "Password" %>
+      <%= password_field_tag "user[password]" %>
+    </div>
+
+    <div class="form_field">
+      <%= submit_tag %>
+    </div>
+  <% end %>
 </div>
