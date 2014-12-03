@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.password_signup = true
     if @user.save
       flash[:notice] = 'The User is successfully saved!'
       session[:current_member] = @user.id
