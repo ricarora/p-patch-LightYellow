@@ -1,61 +1,65 @@
 Rails.application.routes.draw do
 
+  get "/auth/:provider/callback",  to: "sessions#create",    as: :login
+  post "/auth/:provider/callback", to: "sessions#create"
+
   # Home Route
   get 'home/index'
 
+
   # Comment Routes
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/update'
-  get 'comments/edit'
-  get 'comments/destroy'
-  get 'comments/index'
-  get 'comments/show'
+  get 'comments',         to: 'comments#index',   as: :comments
+  get 'comments/new',     to: 'comments#new',     as: :new_comment
+  post 'comments',        to: 'comments#create'
+  get 'comment/:id',      to: 'comments#show',    as: :comment
+  patch 'comment/:id',    to: 'comments#update'
+  delete 'comment/:id',   to: 'comments#destroy'
+  get 'comment/:id/edit', to: 'comments#edit',    as: :edit_comment
 
   # User Routes
-  get 'users/new'
-  get 'users/create'
-  get 'users/update'
-  get 'users/edit'
-  get 'users/destroy'
-  get 'users/index'
-  get 'users/show'
+  get 'users',          to: 'users#index',      as: :users
+  get 'users/new',      to: 'users#new',        as: :new_user
+  post 'users',         to: 'users#create'
+  get 'user/:id',       to: 'users#show',       as: :user
+  patch 'user/:id',     to: 'users#update'
+  delete 'user/:id',    to: 'users#destroy'
+  get 'user/:id/edit',  to: 'users#edit',       as: :edit_user
 
   # Blogpost Routes
-  get 'blogposts/new'
-  get 'blogposts/create'
-  get 'blogposts/update'
-  get 'blogposts/edit'
-  get 'blogposts/destroy'
-  get 'blogposts/index'
-  get 'blogposts/show'
+  get 'blogposts',          to: 'blogposts#index',    as: :blogposts
+  get 'blogposts/new',      to: 'blogposts#new',      as: :new_blogpost
+  post 'blogposts',         to: 'blogposts#create'
+  get 'blogpost/:id',       to: 'blogposts#show',     as: :blogpost
+  patch 'blogpost/:id',     to: 'blogposts#update'
+  delete 'blogpost/:id',    to: 'blogposts#destroy'
+  get 'blogpost/:id/edit',  to: 'blogposts#edit',     as: :edit_blogpost
 
   # Checkout Routes
-  get 'checkouts/new'
-  get 'checkouts/create'
-  get 'checkouts/update'
-  get 'checkouts/edit'
-  get 'checkouts/destroy'
-  get 'checkouts/index'
-  get 'checkouts/show'
+  get 'checkouts',          to: 'checkouts#index',      as: :checkouts
+  get 'checkouts/new',      to: 'checkouts#new',        as: :new_checkout
+  post 'checkouts',         to: 'checkouts#create'
+  get 'checkout/:id',       to: 'checkouts#show',       as: :checkout
+  patch 'checkout/:id',     to: 'checkouts#update'
+  delete 'checkout/:id',    to: 'checkouts#destroy'
+  get 'checkout/:id/edit',  to: 'checkouts#edit',       as: :edit_checkout
 
   # Tool Routes
-  get 'tools/new'
-  get 'tools/create'
-  get 'tools/update'
-  get 'tools/edit'
-  get 'tools/destroy'
-  get 'tools/index'
-  get 'tools/show'
+  get 'tools',          to: 'tools#index',      as: :tools
+  get 'tools/new',      to: 'tools#new',        as: :new_tool
+  post 'tools',         to: 'tools#create'
+  get 'tool/:id',       to: 'tools#show',       as: :tool
+  patch 'tool/:id',     to: 'tools#update'
+  delete 'tool/:id',    to: 'tools#destroy'
+  get 'tool/:id/edit',  to: 'tools#edit',       as: :edit_tool
 
   # Event routes
-  get 'events/new'
-  get 'events/create'
-  get 'events/update'
-  get 'events/edit'
-  get 'events/destroy'
-  get 'events/index'
-  get 'events/show'
+  get 'events',          to: 'events#index',      as: :events
+  get 'events/new',      to: 'events#new',        as: :new_event
+  post 'events',         to: 'events#create'
+  get 'event/:id',       to: 'events#show',       as: :event
+  patch 'event/:id',     to: 'events#update'
+  delete 'event/:id',    to: 'events#destroy'
+  get 'event/:id/edit',  to: 'events#edit',       as: :edit_event
 
 
   # The priority is based upon order of creation: first created -> highest priority.
