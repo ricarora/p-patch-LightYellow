@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   post "/auth/:provider/callback", to: "sessions#create"
 
   # Home Route
-  get 'home/index'
-
+  get '/', to: 'home#index', as: :root
 
   # Comment Routes
   get 'comments',         to: 'comments#index',   as: :comments
