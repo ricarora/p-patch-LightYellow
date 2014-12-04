@@ -6,8 +6,17 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body class="container-fluid">
+  <header>
+    <h1>P-Patch</h1>
+    <ul>
+      <li>Events</li>
+      <li>Calendar</li>
+      <li>Tool Library</li>
+      <li>News</li>
+      <li>Weather</li>
+    </ul>
+  </header>
 <%= yield %>
 
 </body>

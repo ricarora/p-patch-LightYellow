@@ -3,7 +3,7 @@
 
 <div class="sign-up">
   <h2>Sign Up</h2>
-  <%= link_to image_tag("twitter-logo.png"), "/auth/twitter" %>
+  <%= link_to image_tag("twitter-logo.png"), "/auth/twitter", class: "logo" %>
     <%= form_for @user do |f| %>
       <div class="form-field">
         <%= f.label :name%>
