@@ -1,61 +1,13 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
-
-<div class="sign-up">
-  <h2>Sign Up</h2>
-  <%= link_to image_tag("twitter-logo.png"), "/auth/twitter", class: "logo" %>
-    <%= form_for @user do |f| %>
-      <div class="form-field">
-        <%= f.label :name%>
-        <%= f.text_field :name, class: 'form-control'%>
-        <%= render "shared/error_messages", obj: @user, col: :name %>
-      </div>
-
-      <div class='form-field'>
-        <%= f.label :email%>
-        <%= f.text_field :email, class: 'form-control'%>
-        <%= render "shared/error_messages", obj: @user, col: :email %>
-      </div>
-
-      <div class="form-field">
-        <%= f.label :username %>
-        <%= f.text_field :username, class: 'form-control'%>
-        <%= render "shared/error_messages", obj: @user, col: :username %>
-      </div>
-
-      <div class="form-field">
-        <%= f.label :password%>
-        <%= f.password_field :password, class: 'form-control'%>
-        <%= render "shared/error_messages", obj: @user, col: :password %>
-      </div>
-
-      <div class="form-field">
-        <%= f.label :password_confirmation%>
-        <%= f.password_field :password_confirmation, class: 'form-control'%>
-        <%= render "shared/error_messages", obj: @user, col: :password_confirmation %>
-      </div>
-
-      <div class="form-field">
-        <%= f.submit "Become a Member", class: "btn btn-default" %>
-      </div>
-    <% end %>
-</div>
-
-<div class="sign-in">
-  <h2>Sign In</h2>
-  <%= form_tag login_path("internal") do%>
-    <div class="form-field">
-      <%= label_tag "user[username]", "Username" %>
-      <%= text_field_tag "user[username]", "", class: 'form-control' %>
-    </div>
-
-    <div class="form_field">
-      <%= label_tag "user[password]", "Password" %>
-      <%= password_field_tag "user[password]", "", class: 'form-control' %>
-    </div>
-
-    <div class="form_field">
-      <%= submit_tag "Sign in", class: 'btn btn-default'%>
-    </div>
-  <% end %>
-</div>
+<h2>Sign Up</h2>
+<div class="twitter-signin">
+  <strong>Sign Up here</strong>
+   or
+  <strong>Connect with </strong>
+  <%= link_to image_tag("twitter-logo_long.png"), "/auth/twitter", class: "logo" %>
+  </div>
+<%= render "shared/member_form" %>
+<hr>
+<h2>Sign In</h2>
+<%= render "shared/member_signin" %>
