@@ -26,6 +26,16 @@ $(document).ready(function(){
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
     console.log(weatherData.weather[0]);
+    var allWeather = weatherData.weather[0];
+    var main = weatherData.main;
     console.log(weatherData.main);
+
+    $('#weatherinfo').html(
+      '<h3>' + allWeather.main + '</h3>' +
+      allWeather.description +
+      main.temp + main.humidity
+      );
+
+
   }
 }

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   # Home Route
   get '/', to: 'home#index', as: :root
+  # Weather route
+  get 'weather', to: 'home#weather', as: :weather
 
   # Comment Routes
   get 'comments',         to: 'comments#index',   as: :comments
