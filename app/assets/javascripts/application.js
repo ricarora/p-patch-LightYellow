@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  var url =  "http://api.openweathermap.org/data/2.5/weather?q=Seattle,us";
+
+  $.getJSON( url, null, function(data) {
+    processData(data);
+  });
+});
+
+function processData(weatherData) {
+  if( weatherData !== undefined && weatherData !== null) {
+    console.log(weatherData.weather);
+    console.log(weatherData.main);
+  }
+}
