@@ -7,10 +7,23 @@ dp.viewType = "Week";
 var event_hash = $("#events").attr( "data-url" );
 var json_events = JSON.parse(event_hash);
 console.log(event_hash);
+for(i=0; i < json_events.length; i++) {
+  var start_date = json_events[i]["start"].match(/[^"].{18}/)
+  
+}
 
 dp.events.list = json_events;
 
-console.log(Date.parse("2014-12-08T09:30:00.000Z"))
+var date = new Date("2014-12-08T09:30:00.000Z");
+options = {
+  year: 'numeric', month: 'numeric', day: 'numeric',
+  hour: 'numeric', minute: 'numeric', second: 'numeric',
+  hour12: false
+};
+console.log(date.toLocaleString('en-US', options));
+// → "12/19/2012, 19:00:00"
+
+// console.log(new Intl.DateTimeFormat('ko-KR').format("2014-12-08T09:30:00.000Z"))
 // [
 //   {
 //     "id":"5",
