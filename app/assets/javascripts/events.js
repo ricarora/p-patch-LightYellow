@@ -1,21 +1,10 @@
-$('#datetimepicker1').click(function(){
-  console.log("click firing");
-  datetimepicker({
-   lang:'en',
-   i18n:{
-    de:{
-     months:[
-      'Januar','Februar','März','April',
-      'Mai','Juni','Juli','August',
-      'September','Oktober','November','Dezember',
-     ],
-     dayOfWeek:[
-      "So.", "Mo", "Di", "Mi",
-      "Do", "Fr", "Sa.",
-     ]
-    }
-   },
-   timepicker:false,
-   format:'d.m.Y'
-  });
-});
+// this is not working, look into it later and remove script from html partial form.
+// $('#startdatetime').datetimepicker({
+//   datepicker:true,
+//   format:'m/d/Y H:i'
+// });
+//
+// $('#enddatetime').datetimepicker({
+//   datepicker:true,
+//   format:'m/d/Y H:i'
+// });
