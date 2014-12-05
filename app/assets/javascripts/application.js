@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
-    console.log(weatherData.weather);
+    console.log(weatherData.weather[0]);
     console.log(weatherData.main);
   }
 }
