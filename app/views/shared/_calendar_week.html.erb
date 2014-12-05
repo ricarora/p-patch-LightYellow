@@ -8,9 +8,17 @@ var event_hash = $("#events").attr( "data-url" );
 var json_events = JSON.parse(event_hash);
 console.log(event_hash);
 for(i=0; i < json_events.length; i++) {
-  var start_date = json_events[i]["start"].match(/[^"].{18}/)
+  var start_date = json_events[i]["start"].match(/[^"].{18}/)[0]
+  console.log(start_date)
+  json_events[i]["start"] = start_date.toString()
 
+  var end_date = json_events[i]["end"].match(/[^"].{18}/)[0]
+  json_events[i]["end"] = end_date.toString()
+  console.log(end_date.toString())
 }
+
+
+console.log(json_events)
 
 dp.events.list = json_events;
 
