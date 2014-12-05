@@ -14,7 +14,13 @@
   <input type="submit" name="Submit" value="Submit">
 </form> -->
 
+<%= javascript_tag do %>
+  window.eventsURL = '<%= j events_url %>';
+<% end %>
 
+<%= content_tag "div", id: "events", data: {url: Event.all} do %>
+  Loading products...
+<% end %>
 
 <%= render "shared/calendar_month" %>
 <%= render "shared/calendar_week" %>
