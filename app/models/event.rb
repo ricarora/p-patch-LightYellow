@@ -1,15 +1,15 @@
 class Event < ActiveRecord::Base
   validates :title, presence: true
-  validates :start_time, presence: true
-  validates :end_time, presence: true
-  validates :start_is_before_end, on: :create
-  validates :cannot_be_in_past, on: :create
+  validates :start_time, presence: true, if: :cannot_be_in_past
+  validates :end_time, presence: true, if: :start_is_before_end
 
   def start_is_before_end
-    start_time > end_time
+    if start_time > end_time
+    end
   end
 
   def cannot_be_in_past
-    start_time < Date.today
+    if start_time < Date.today
+    end
   end
 end
