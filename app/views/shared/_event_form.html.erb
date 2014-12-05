@@ -1,0 +1,46 @@
+<%= form_for @event do |f| %>
+<div id="event-form">
+  <%= f.label :title%>
+  <%= f.text_field :title, class: 'form-control'%>
+  <%= render "shared/error_messages", obj: @event, col: :title %>
+</div>
+<div id="event-form">
+  <%= f.label :details %>
+  <%= f.text_area :details, class: 'form-control'%>
+  <%= render "shared/error_messages", obj: @event, col: :details %>
+</div>
+<div id="event-form">
+  <%= f.label :classification %>
+  <%= f.text_field :classification, class: 'form-control'%>
+  <%= render "shared/error_messages", obj: @event, col: :classification %>
+</div>
+
+<div id="event-form">
+  <%= f.label :start_time %>
+  <%= f.text_field :start_time, id: 'startdatetime'%>
+  <%= render "shared/error_messages", obj: @event, col: :start_time %>
+</div>
+
+<div id="event-form">
+  <%= f.label :end_time %>
+  <%= f.text_field :end_time, id: 'enddatetime'%>
+  <%= render "shared/error_messages", obj: @event, col: :end_time %>
+</div>
+
+<div id="event-form">
+  <%= f.submit %>
+</div>
+
+<% end %>
+
+<script charset="utf-8">
+$('#startdatetime').datetimepicker({
+  datepicker:true,
+  format:'d/m/Y H:i'
+});
+
+$('#enddatetime').datetimepicker({
+  datepicker:true,
+  format:'d/m/Y H:i'
+});
+</script>
