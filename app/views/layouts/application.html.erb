@@ -7,17 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="container-fluid">
-  <header>
-    <h1><%= link_to "P-Patch", root_path%></h1>
-    <ul>
-      <li>Events</li>
-      <li>Calendar</li>
-      <li>Tool Library</li>
-      <li>News</li>
-      <li>Weather</li>
-    </ul>
+  <header class="nav-bar navbar-fixed-top">
+    <span class="brand-header">
+      <%= link_to image_tag("p.png"), root_path, class: "logo1" %>
+      <%= link_to image_tag("patch.png"), root_path, class: "logo2" %>
+    </span>
+
+    <span class="signin-header">
+      <%= link_to "Become a Member", new_user_path%> | <%= link_to "Sign in", new_user_path%>
+    </span>
+
+    <span class="link-header">
+      <ul>
+        <li><%= link_to "Events", events_path %></li>
+        <li><%= link_to "Calendar", events_path %></li>
+        <li><%= link_to "Tool Library", root_path %></li>
+        <li><%= link_to "News", root_path %></li>
+        <li><%= link_to "Weather", root_path %></li>
+      </ul>
+    </span>
+
   </header>
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
 
 </body>
 </html>
