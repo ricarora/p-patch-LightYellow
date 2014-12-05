@@ -6,56 +6,16 @@ dp.viewType = "Week";
 
 var event_hash = $("#events").attr( "data-url" );
 var json_events = JSON.parse(event_hash);
-console.log(event_hash);
-for(i=0; i < json_events.length; i++) {
-  var start_date = json_events[i]["start"].match(/[^"].{18}/)[0]
-  console.log(start_date)
-  json_events[i]["start"] = start_date.toString()
 
-  var end_date = json_events[i]["end"].match(/[^"].{18}/)[0]
-  json_events[i]["end"] = end_date.toString()
-  console.log(end_date.toString())
+for(i=0; i < json_events.length; i++) {
+  var start_date = json_events[i]["start"].match(/[^"].{18}/)[0];
+  json_events[i].start = start_date.toString();
+
+  var end_date = json_events[i]["end"].match(/[^"].{18}/)[0];
+  json_events[i].end = end_date.toString();
 }
 
-
-console.log(json_events)
-
 dp.events.list = json_events;
-
-
-var date = new Date("2014-12-08T09:30:00.000Z");
-options = {
-  year: 'numeric', month: 'numeric', day: 'numeric',
-  hour: 'numeric', minute: 'numeric', second: 'numeric',
-  hour12: false
-};
-console.log(date.toLocaleString('en-US', options));
-// → "12/19/2012, 19:00:00"
-
-// console.log(new Intl.DateTimeFormat('ko-KR').format("2014-12-08T09:30:00.000Z"))
-
-// [
-//   {
-//     "id":"5",
-//     "text":"Calendar Event 5",
-//     "start":"2014-12-04T10:30:00",
-//     "end":"2014-12-05T16:30:00"
-//   },
-//   {
-//     "id":"6",
-//     "text":"Calendar Event 6",
-//     "start":"2014-02-24T09:00:00",
-//     "end":"2014-02-24T14:30:00"
-//   },
-//   {
-//     "id":"7",
-//     "text":"Calendar Event 7",
-//     "start":"2014-02-27T12:00:00",
-//     "end":"2014-02-27T16:00:00"
-//   }];
-
 dp.init();
-
-
 
 </script>
