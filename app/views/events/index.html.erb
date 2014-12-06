@@ -1,20 +1,14 @@
 <h1>Events#index</h1>
 <p>Find me in app/views/events/index.html.erb</p>
 
-<!-- <form action="/events" method="post">
-  <label for="startdatetime">Start time and date:</label>
-  <input id="startdatetime" type="text" >
 
-  <label for="startdatetime">Start time and date:</label>
-  <input id="startdatetime" type="text" >
+<%= javascript_tag do %>
+  window.eventsURL = '<%= j events_url %>';
+<% end %>
 
-  <label for="enddatetime">End time and date:</label>
-  <input id="enddatetime" type="text" >
+<%= content_tag "div", id: "events", data: {url: @events} do %>
+  <!-- This is where the Events are hidden -->
+<% end %>
 
-  <input type="submit" name="Submit" value="Submit">
-</form> -->
-
-
-
-<%= render "shared/calendar_month" %>
+<!-- <%#= render "shared/calendar_month" %> -->
 <%= render "shared/calendar_week" %>
