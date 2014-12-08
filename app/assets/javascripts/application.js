@@ -16,19 +16,24 @@
 //= require_tree .
 
 $(document).ready(function(){
-  var url =  "http://api.openweathermap.org/data/2.5/weather?q=Seattle,us";
+  var url =  "http://api.openweathermap.org/data/2.5/forecast?q=Seattle,us&mode=json";
 
   $.getJSON( url, null, function(data) {
     processData(data);
   });
 });
 
+
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
-    console.log(weatherData.weather[0]);
-    var allWeather = weatherData.weather[0];
-    var main = weatherData.main;
-    console.log(weatherData.main);
+
+    console.log((weatherData.list[0].dt_txt));
+    console.log(weatherData.city.name);
+    console.log(weatherData.list[2].dt_txt);
+    console.log(Date.toLocaleFormat(weatherData.list[3].dt));
+    var allWeather = weatherData.list[0];
+    var main = weatherData.list;
+    console.log(weatherData.list);
 
     $('#weatherinfo').html(
       '<h3>' + allWeather.main + '</h3>' +
