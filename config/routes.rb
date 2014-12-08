@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  # Sessions Routes
   get "/auth/:provider/callback",  to: "sessions#create",    as: :login
   post "/auth/:provider/callback", to: "sessions#create"
+  delete "/logout",      to: "sessions#destroy",            as: :logout
 
   # Home Route
   get '/', to: 'home#index', as: :root
