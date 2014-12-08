@@ -28,12 +28,22 @@ function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
 
     console.log((weatherData.list[0].dt_txt));
+    console.log((weatherData.list[0].main.temp_max));
+    console.log((weatherData.list[0].main.temp_min));
+    // console.log((weatherData.list[0].rain.3h));
+    console.log((weatherData.list[0].weather[0].main));
+    console.log((weatherData.list[0].weather[0].description));
     console.log(weatherData.city.name);
     console.log(weatherData.list[2].dt_txt);
-    console.log(Date.toLocaleFormat(weatherData.list[3].dt));
+    console.log(Date(weatherData.list[3].dt_txt));
     var allWeather = weatherData.list[0];
     var main = weatherData.list;
     console.log(weatherData.list);
+
+    // var hourbyhourdata = for (i=0; i<9; i++) {
+    //                         weatherData.list[i].dt_txt, weatherData.list[i]
+    //
+    //                       }
 
     $('#weatherinfo').html(
       '<h3>' + allWeather.main + '</h3>' +
