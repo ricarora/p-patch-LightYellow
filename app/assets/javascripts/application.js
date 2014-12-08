@@ -26,14 +26,24 @@ $(document).ready(function(){
 
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
+    console.log(weatherData.list)
+    var hourlyWeather = weatherData.list
+
+    for (i = 0; i < hourlyWeather.length; i++) {
+      
+    }
+
 
     console.log((weatherData.list[0].dt_txt));
     console.log(weatherData.city.name);
     console.log(weatherData.list[2].dt_txt);
-    console.log(Date.toLocaleFormat(weatherData.list[3].dt));
-    var allWeather = weatherData.list[0];
+    // console.log(Date.toLocaleFormat(weatherData.list[3].dt));
+    var allWeather = weatherData.list[0].dt;
+    console.log("Datetime?");
+    console.log(allWeather);
     var main = weatherData.list;
-    console.log(weatherData.list);
+    // this is working?
+    console.log(new Date(weatherData.list[0].dt_txt).toLocaleString());
 
     $('#weatherinfo').html(
       '<h3>' + allWeather.main + '</h3>' +
