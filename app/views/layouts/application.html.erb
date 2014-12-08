@@ -14,7 +14,12 @@
     </span>
 
     <span class="signin-header">
-      <%= link_to "Become a Member", new_user_path%> | <%= link_to "Sign in", new_user_path%> | <%= link_to "Sign out", logout_path, :method => "delete"  %> 
+      <%= link_to "Become a Member", new_user_path%> |
+      <% if session[:current_member] == nil %>
+        <%= link_to "Sign in", new_user_path %>
+      <% else %>
+        <%= link_to "Sign out", logout_path, :method => "delete"  %>
+      <% end %>
     </span>
 
     <span class="link-header">

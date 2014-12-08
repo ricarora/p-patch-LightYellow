@@ -27,6 +27,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:current_member] = nil
+    redirect_to root_path
   end
 
   def index
@@ -47,7 +49,7 @@ class SessionsController < ApplicationController
       Authentication.create(uid: auth_hash[:uid], provider: auth_hash[:provider], user_id: user.id)
       session[:current_member] = user.id
     else
-      session[:current_member] = login.user_id
+      session[:current_member] = login[0].user_id
     end
   end
 end
