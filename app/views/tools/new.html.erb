@@ -1,2 +1,19 @@
 <h1>Tools#new</h1>
 <p>Find me in app/views/tools/new.html.erb</p>
+
+<%= form_for @tool do |f| %>
+  <div id="event-form">
+    <%= f.label :name%>
+    <%= f.text_field :name, class: 'form-control'%>
+    <%= render "shared/error_messages", obj: @tool, col: :name %>
+  </div>
+
+  <div id="event-form">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
+  </div>
+
+  <div id="event-form">
+    <%= f.submit "Submit", class: "btn btn-submit" %>
+  </div>
+<% end %>
