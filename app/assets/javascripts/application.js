@@ -26,11 +26,10 @@ $(document).ready(function(){
 
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
-    console.log(weatherData.list)
-    var hourlyWeather = weatherData.list
+    console.log(weatherData.list);
 
-    for (i = 0; i < hourlyWeather.length; i++) {
-
+    for (i = 0; i < weatherData.list.length; i++) {
+      weatherData.list[i].dt_txt
     }
 
 
