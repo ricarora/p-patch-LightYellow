@@ -3,17 +3,12 @@ class SessionsController < ApplicationController
   skip_before_filter :logged_in, only: :create
 
   def new
-
-  end
-
-  def current_member
-    User.find_by(username: params[:user][:username])
   end
 
   def create
     if params[:provider] == "internal"
-      if current_member && current_member.authenticate(params[:user][:password])
-      session[:current_member] = current_member.id
+      if member && member.authenticate(params[:user][:password])
+      session[:current_member] = member.id
       else
         render :new
       end
@@ -55,5 +50,9 @@ class SessionsController < ApplicationController
     else
       session[:current_member] = login[0].user_id
     end
+  end
+
+  def member
+    User.find_by(username: params[:user][:username])
   end
 end
