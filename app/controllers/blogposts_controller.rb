@@ -1,6 +1,7 @@
 class BlogpostsController < ApplicationController
   skip_before_filter :logged_in, only: [:index, :show]
-
+  before_filter :admin?, except: [:index, :show]
+  
   def index
     @blogposts = Blogpost.all
   end
@@ -31,5 +32,14 @@ class BlogpostsController < ApplicationController
   end
 
   def show
+    @blogpost = Blogpost.find(params[:id])
+  end
+
+  private
+
+  def admin?
+    if !current_member.admin
+      redirect_to root_path
+    end
   end
 end

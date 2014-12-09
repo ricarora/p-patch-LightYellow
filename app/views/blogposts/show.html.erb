@@ -1,2 +1,19 @@
-<h1>Blogposts#show</h1>
-<p>Find me in app/views/blogposts/show.html.erb</p>
+<div class="post">
+  <h3><%= @blogpost.title %></h3>
+
+  <p>
+    <%= @blogpost.content %>
+  </p>
+</div>
+<div>
+<% if @blogpost.id > 1 %>
+<span class="previous">
+  <%= link_to "Previous", blogpost_path(@blogpost.id - 1) %>
+</span>
+<% end %>
+<% if @blogpost.id != Blogpost.last.id %>
+<span class="next">
+<%= link_to "Next", blogpost_path(@blogpost.id + 1) %>
+</span>
+<% end %>
+</div>
