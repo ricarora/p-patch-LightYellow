@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    current_member.update(params.require(:user).permit(:name, :email))
+    redirect_to user_path
   end
 
   def edit

@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<strong><%= current_member.username %> : Profile</strong>
+<div id="display_profile" style="display:block">
+  <div>
+    <strong>Username:</strong> <%= current_member.username %>
+  </div>
+  <div>
+    <strong>Name:</strong> <%= current_member.name %>
+  </div>
+  <div>
+    <strong>Email:</strong> <%= current_member.email %>
+  </div>
+<%= link_to "Edit Profile", "#edit_profile", class:"btn btn-warning btn-xs", role:"button" %>
+</div>
+<div id="edit_profile" style="display:none">
+  <%= form_for current_member, url: user_path do |f| %>
+  <div class="field">
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "Email" %>
+    <%= f.text_field :email %>
+  </div>
+  <div id="submit">
+    <%= f.submit "Save Profile", :class => "edit-profile btn btn-warning btn-xs" %>
+  </div>
+  <% end %>
+</div>
