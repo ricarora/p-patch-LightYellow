@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post "/auth/:provider/callback", to: "sessions#create"
   delete "/logout",      to: "sessions#destroy",            as: :logout
 
+  get "/login", to: "users#signin", as: :signin
+
   # Home Route
   get '/', to: 'home#index', as: :root
   # Weather route
