@@ -15,6 +15,11 @@
 //= require turbolinks
 //= require_tree .
 
+
+function getHtml1(info) {
+  return "<div class=\"info\">" + info + "</div>";
+}
+
 $(document).ready(function(){
   var url =  "http://api.openweathermap.org/data/2.5/forecast?q=Seattle,us&mode=json";
 
@@ -23,15 +28,22 @@ $(document).ready(function(){
   });
 });
 
-
+// var WeatherHourlyData = new Array();
 function processData(weatherData) {
   if( weatherData !== undefined && weatherData !== null) {
-    console.log(weatherData.list)
-    var hourlyWeather = weatherData.list
+    console.log(weatherData.list);
+    var hourlyWeather = weatherData.list;
 
-    for (i = 0; i < hourlyWeather.length; i++) {
-
+    for (i = 0; i < 9; i++) {
+        var weatherList = weatherData.list[i].dt_txt;
+        weatherList += weatherData.list[i].main.temp_max;
+        weatherList += weatherData.list[i].main.temp_min;
+        weatherList += weatherData.list[i].weather[0].main;
+        weatherList += weatherData.list[i].weather[0].description;
+        $('#weatherinfo').prepend(getHtml1(weatherList));
     }
+
+
 
 
     console.log((weatherData.list[0].dt_txt));
@@ -60,11 +72,11 @@ function processData(weatherData) {
     //
     //                       }
 
-    $('#weatherinfo').html(
-      '<h3>' + allWeather.main + '</h3>' +
-      allWeather.description +
-      main.temp + main.humidity
-      );
+    // $('#weatherinfo').html(
+    //   '<h3>' + allWeather.main + '</h3>' +
+    //   allWeather.description +
+    //   main.temp + main.humidity
+    //   );
 
 
   }
