@@ -2,3 +2,17 @@
 <p>Find me in app/views/tools/index.html.erb</p>
 
 <%= link_to "Add a Tool to the Library", new_tool_path %>
+
+<% @tools.each do |t| %>
+  <div class="row <%=t.available%>">
+    <div class="col-lg-4">
+      <%= t.name %>
+    </div>
+    <div class="col-lg-4">
+      <%= t.quantity %>
+    </div>
+    <div class="col-lg-4 rental">
+      <%= link_to "Checkout #{t.name}", tool_path(t.id) %>
+    </div>
+  </div>
+<% end %>
