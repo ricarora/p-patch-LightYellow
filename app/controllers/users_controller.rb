@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-  skip_before_filter :logged_in, only: :new
+  skip_before_filter :logged_in, only: [:new, :signin]
   def new
     @user = User.new
+  end
+
+  def signin
+
   end
 
   def create
