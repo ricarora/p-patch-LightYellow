@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  skip_before_filter :logged_in, only: [:index, :show]
+
   def new
     @event = Event.new
   end
