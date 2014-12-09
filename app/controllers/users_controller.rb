@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+  skip_before_filter :logged_in, only: :new
   def new
     @user = User.new
   end

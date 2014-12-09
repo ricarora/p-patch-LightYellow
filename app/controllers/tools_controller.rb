@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  skip_before_filter :logged_in, only: [:index, :show]
   def new
   end
 
