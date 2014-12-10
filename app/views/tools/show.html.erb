@@ -3,24 +3,15 @@
 
 <h2><%= @tool.name %></h2>
 
-<h4>
+<h3>
   <%= @tool.quantity %> available
-</h4>
+</h3>
 
 <%= form_for @checkout, :html => {:class => "form-horizontal"} do |f| %>
   <div class="form-group col-md-6">
-    <%= f.label :checkout_date, class: "col-md-6 control-label" %>
-    <div class="col-md-6">
-      <%= f.text_field :checkout_date, id: 'checkout', class: "form-control" %>
-      <%= render "shared/error_messages", obj: @checkout, col: :checkout_date %>
-    </div>
-  </div>
-
-  <div class="form-group col-md-6">
-    <%= f.label :due_date, class: "col-md-6 control-label" %>
-    <div class="col-md-6">
-      <%= f.text_field :due_date, id: 'duedate', class: "form-control"%>
-      <%= render "shared/error_messages", obj: @checkout, col: :due_date %>
+    <%= f.label :quantity, class: "control-label col-md-6" %>
+    <div class="col-md-12">
+      <%= f.number_field :quantity, class: "form-control"%>
     </div>
   </div>
 
@@ -28,17 +19,3 @@
     <%= f.submit "Checkout", class: "btn btn-submit"%>
   </div>
 <% end %>
-
-<script charset="utf-8">
-$('#checkout').datetimepicker({
-  timepicker:false,
-  datepicker:true,
-  format:'d/m/Y H:i'
-});
-
-$('#duedate').datetimepicker({
-  datepicker:true,
-  timepicker:false,
-  format:'d/m/Y H:i'
-});
-</script>
