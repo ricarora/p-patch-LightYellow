@@ -1,9 +1,9 @@
 class BlogpostsController < ApplicationController
   skip_before_filter :logged_in, only: [:index, :show]
   before_filter :admin?, except: [:index, :show]
-  
+
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.all.reverse
   end
 
   def new
@@ -23,9 +23,14 @@ class BlogpostsController < ApplicationController
   end
 
   def update
+    @blogpost = Blogpost.find(params[:id])
+    if @blogpost.update(params.require(:blogpost).permit(:title, :content))
+      redirect_to user_path
+    end
   end
 
   def edit
+    @blogpost = Blogpost.find(params[:id])
   end
 
   def destroy

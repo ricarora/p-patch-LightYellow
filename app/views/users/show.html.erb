@@ -1,4 +1,4 @@
-<h3><strong><%= current_member.username %> : Profile</strong></h3>
+<h2><strong><%= current_member.username %> : Profile</strong></h2>
 <div id="display_profile" style="display:block">
   <div>
     <strong>Username:</strong> <%= current_member.username %>
@@ -24,5 +24,22 @@
   <div id="submit">
     <%= f.submit "Save Profile", :class => "edit-profile btn btn-warning btn-xs" %>
   </div>
+  <% end %>
+</div>
+
+<div class="user-post">
+  <% if @posts %>
+    <% @posts.each do |post| %>
+    <div class="post">
+      <h4><%= post.title %></h4>
+      <div>
+        <p><%= truncate(post.content, length: 400) %></p>
+      </div>
+      <div class="read-more">
+        <%= link_to "Edit Post", edit_blogpost_path(post.id) %>
+      </div>
+      <hr>
+    </div>
+    <% end %>
   <% end %>
 </div>

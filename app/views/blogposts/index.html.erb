@@ -1,10 +1,10 @@
-<h3>Community News</h3>
+<h2>Community News</h2>
 <hr>
 <% @blogposts.each do |post| %>
 <div class="post">
   <h4><%= post.title %></h4>
   <div>
-    <p><%= truncate(post.content, length: 300) %></p>
+    <p><%= truncate(post.content, length: 400) %></p>
   </div>
   <div class="read-more">
     <%= link_to "Read More", blogpost_path(post.id) %>

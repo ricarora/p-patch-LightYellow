@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def signin
-
   end
 
   def create
@@ -35,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = current_member.blogposts.reverse
   end
 
   private
