@@ -3,6 +3,7 @@ class CheckoutsController < ApplicationController
   end
 
   def create
+    raise params.inspect
   end
 
   def update
