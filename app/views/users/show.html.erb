@@ -26,7 +26,10 @@
   </div>
   <% end %>
 </div>
-
+<% if current_member.admin %>
+<%= link_to "Write Blogpost", new_blogpost_path, class:"btn btn-warning btn-xs", role:"button" %>
+<%= link_to "Manage Tool Library", tools_path, class:"btn btn-warning btn-xs", role:"button" %>
+<% end %>
 <div class="user-post">
   <% if @posts %>
     <% @posts.each do |post| %>
