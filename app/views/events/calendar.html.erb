@@ -1,0 +1,12 @@
+<h2>Event Calendar</h2>
+
+<%= javascript_tag do %>
+window.eventsURL = '<%= j events_url %>';
+<% end %>
+
+<%= content_tag "div", id: "events", data: {url: @events} do %>
+<!-- This is where the Events are hidden -->
+<% end %>
+
+<!-- <%#= render "shared/calendar_month" %> -->
+<%= render "shared/calendar_week" %>
