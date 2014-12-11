@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   delete 'event/:id',    to: 'events#destroy'
   get 'event/:id/edit',  to: 'events#edit',       as: :edit_event
 
+  get 'calendar',        to: 'events#calendar',      as: :calendar
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

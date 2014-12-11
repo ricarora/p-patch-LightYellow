@@ -1,14 +1,13 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
-
-
-<%= javascript_tag do %>
-  window.eventsURL = '<%= j events_url %>';
+<h2>Events</h2>
+<% @events.each do |event| %>
+  <div>
+    <strong><%= event.title %></strong>
+  </div>
+  <div>
+    Date: <%= event.start_time %> - <%= event.end_time %>
+  </div>
+  <div>
+    <%= event.details %>
+  </div>
+  <hr>
 <% end %>
-
-<%= content_tag "div", id: "events", data: {url: @events} do %>
-  <!-- This is where the Events are hidden -->
-<% end %>
-
-<!-- <%#= render "shared/calendar_month" %> -->
-<%= render "shared/calendar_week" %>
