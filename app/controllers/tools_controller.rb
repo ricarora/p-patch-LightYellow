@@ -30,6 +30,8 @@ class ToolsController < ApplicationController
   def show
     @tool = Tool.find(params[:id])
     @checkout = Checkout.new
+    @checkout_date = Time.now.strftime("%A, %b %d")
+    @return_date = (Time.now + 7.days).strftime("%A, %b %d")
   end
 
   private
