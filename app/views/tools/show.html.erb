@@ -1,2 +1,27 @@
 <h1>Tools#show</h1>
 <p>Find me in app/views/tools/show.html.erb</p>
+
+<h2><%= @tool.name %></h2>
+
+<h3>
+  <%= @tool.quantity %> available
+</h3>
+
+<%= form_for @checkout, :html => {:class => "form-horizontal"} do |f| %>
+  <div class="form-group col-lg-6">
+    <%= f.label :quantity, class: "control-label col-lg-6" %>
+    <div class="col-lg-6">
+      <%= f.number_field :quantity, value: 1, min: 1, max: @tool.quantity, class: "form-control"%>
+    </div>
+  </div>
+
+  <!-- This sends along the tool id in hidden field -->
+  <%= f.hidden_field :tool_id, :value => @tool.id %>
+
+  <div class="form-group">
+    <%= f.submit "Checkout", class: "btn btn-submit"%>
+  </div>
+<% end %>
+
+<h4>Rented on: <%= @checkout_date %></h4>
+<h4>Due on: <%= @return_date %></h4>
