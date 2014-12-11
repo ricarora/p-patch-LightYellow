@@ -48,3 +48,18 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="tool-status">
+  <% if @tools %>
+    <h3>Rented Tools</h3>
+    <% @tools.each do |tool| %>
+      <h4><%= tool.name %></h4>
+      <% tool.checkouts.each do |c |%>
+        <p>
+          Due: <%= c.due_date.strftime("%A, %b %d") %>
+        </p>
+      <% end %>
+      <%= link_to "Return Tool", root_path, class: "btn btn-default" %>
+    <% end %>
+  <% end %>
+</div>

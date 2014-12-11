@@ -21,6 +21,7 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
+    
   end
 
   def index
