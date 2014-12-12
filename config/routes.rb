@@ -1,5 +1,6 @@
+require 'resque/server'
 Rails.application.routes.draw do
-
+  mount Resque::Server, :at => '/resque'
   # Sessions Routes
   get "/auth/:provider/callback",  to: "sessions#create",    as: :login
   post "/auth/:provider/callback", to: "sessions#create"
