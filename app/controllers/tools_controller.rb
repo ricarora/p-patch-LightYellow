@@ -8,6 +8,7 @@ class ToolsController < ApplicationController
     @tool = Tool.new(tool_params)
     if @tool.save
       @tool.checkouts.create(user_id: current_member.id)
+      redirect_to tools_path
     else
       render :new
     end
@@ -23,7 +24,7 @@ class ToolsController < ApplicationController
   end
 
   def index
-    @tools = Tool.all
+    @tools = Tool.all.order(:name)
     @tools.each{ |tool| tool.check_availability }
   end
 

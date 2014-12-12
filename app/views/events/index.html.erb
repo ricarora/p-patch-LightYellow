@@ -4,7 +4,7 @@
     <strong><%= event.title %></strong>
   </div>
   <div>
-    Date: <%= event.start_time %> - <%= event.end_time %>
+    Date: <%= event.start_time.strftime("%A, %d %b %Y, %l:%M %p") %> - <%= event.end_time.strftime("%A, %d %b %Y, %l:%M %p") %>
   </div>
   <div>
     <%= event.details %>
