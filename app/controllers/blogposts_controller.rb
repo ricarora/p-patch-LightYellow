@@ -15,7 +15,7 @@ class BlogpostsController < ApplicationController
       @blogpost = Blogpost.new(params.require(:blogpost).permit(:title, :content))
       @blogpost.user_id = session[:current_member]
       if @blogpost.save
-        Resque.enqueue(NewpostJob, @blogpost.id)
+        Resque.enqueue(NewpostJob)
         redirect_to blogposts_path
       else
         render :new
