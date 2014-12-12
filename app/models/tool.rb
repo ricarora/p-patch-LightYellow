@@ -11,4 +11,9 @@ class Tool < ActiveRecord::Base
       self.save
     end
   end
+
+  def return_tool(checkout_quantity)
+    self.quantity += checkout_quantity
+    self.save
+  end
 end
