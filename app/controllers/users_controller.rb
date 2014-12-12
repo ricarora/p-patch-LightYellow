@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user.password_signup = true
     if @user.save
       flash[:notice] = 'The User is successfully saved!'
+      PpatchMailer.sign_up(@user.id).deliver
       session[:current_member] = @user.id
       redirect_to root_path
     else
