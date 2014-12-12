@@ -50,15 +50,11 @@
 </div>
 
 <div class="tool-status">
-  <% if @tools %>
+  <% if @checkouts %>
     <h3>Rented Tools</h3>
-    <% @tools.each do |tool| %>
-      <h4><%= tool.name %></h4>
-      <% tool.checkouts.each do |c |%>
-        <p>
-          Due: <%= c.due_date.strftime("%A, %b %d") %>
-        </p>
-      <% end %>
+    <% @checkouts.each do |checkout| %>
+      <h4><%= checkout.tool.name %></h4>
+      <%= checkout.due_date.strftime("%A, %b %d") %>
       <%= link_to "Return Tool", root_path, class: "btn btn-default" %>
     <% end %>
   <% end %>

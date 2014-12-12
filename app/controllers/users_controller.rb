@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 
   def show
     @posts = current_member.blogposts.reverse
-    @tools = current_member.tools
+    @checkouts = current_member.checkouts
+
   end
 
   private
