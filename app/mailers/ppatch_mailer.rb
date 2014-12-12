@@ -12,7 +12,7 @@ class PpatchMailer < ActionMailer::Base
 
   def new_post(post)
     @users = User.where.not(email: nil)
-    @users.collect {|user| user.email}
+    @users = @users.collect {|user| user.email}
     mail(
     to: @users,
     bcc: "rr.p.patch@gmail.com",
