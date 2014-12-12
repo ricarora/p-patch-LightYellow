@@ -1,6 +1,7 @@
 class NewpostJob
   @queue = :email
-  def self.perform(id)
-    PpatchMailer.new_post(id).deliver
+  
+  def self.perform(blogpost_id)
+    PpatchMailer.new_post(blogpost_id).deliver
   end
 end
