@@ -21,7 +21,10 @@ class CheckoutsController < ApplicationController
   end
 
   def destroy
-    
+    @checkout = Checkout.find(params[:id])
+    @checkout.tool.return_tool(@checkout.quantity)
+    @checkout.destroy
+    redirect_to user_path
   end
 
   def index
