@@ -48,3 +48,19 @@
     <% end %>
   <% end %>
 </div>
+
+<div class="tool-status">
+  <% if @checkouts %>
+    <h3>Rented Tools</h3>
+    <% @checkouts.each do |checkout| %>
+      <h4><%= checkout.tool.name %></h4>
+      <p>
+        Due: <%= checkout.due_date.strftime("%A, %b %d") %>
+      </p>
+      <p>
+        You rented: <%= checkout.quantity%>
+      </p>
+      <%= link_to "Return Tool", checkout_path(checkout.id), class: "btn btn-default", method: :delete %>
+    <% end %>
+  <% end %>
+</div>

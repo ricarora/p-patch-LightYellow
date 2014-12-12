@@ -1,6 +1,6 @@
 class Checkout < ActiveRecord::Base
-  belongs_to :tools
-  belongs_to :users
+  belongs_to :tool
+  belongs_to :user
 
   validates :checkout_date, :due_date, presence: true
 

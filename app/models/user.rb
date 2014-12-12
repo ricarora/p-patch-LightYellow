@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   has_many :comments
   has_many :checkouts
-  has_many :users, through: :checkouts
+  has_many :tools, through: :checkouts
 
   with_options if: :local_signup? do |user|
     user.validates :name, :email, presence: true
