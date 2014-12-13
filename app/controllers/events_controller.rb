@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params.require(:event).permit(:title, :details, :classification, :start_time, :end_time))
     if @event.save
+      redirect_to calendar_path
     else
       render :new
     end
