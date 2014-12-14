@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
     else
 
     end
+    redirect_to root_path
   end
 
   def update
