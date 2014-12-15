@@ -9,8 +9,9 @@
 <body class="container-fluid">
   <header class="nav-bar">
     <span class="brand-header">
-      <%= link_to image_tag("p.png"), root_path, class: "logo1" %>
-      <%= link_to image_tag("patch.png"), root_path, class: "logo2" %>
+      <!-- <%#= link_to image_tag("p.png"), root_path, class: "logo1" %>
+      <%#= link_to image_tag("patch.png"), root_path, class: "logo2" %> -->
+      <h1><%= link_to "P-Patch", root_path, class: "logo1" %></h1>
     </span>
 
     <span class="signin-header">
@@ -34,7 +35,7 @@
     </span>
 
   </header>
-  
+
     <%= yield %>
 
 

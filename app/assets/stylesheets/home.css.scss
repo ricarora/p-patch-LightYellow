@@ -11,37 +11,58 @@
 }
 
 // Leftbox
-
 .leftbox {
   display: block;
-  width: 50%;
+  padding: 20px;
 }
 
 .leftbox h2 {
-  padding: 20px 0;
   margin: 0;
+  color: white;
+  padding-left: 20px;
+}
+
+//rightbox
+.rightbox {
+  color: white;
+  padding: 20px;
+}
+
+.rightbox h2 {
+  margin: 0;
+  padding: 0 20px;
+}
+
+//innerbody of home page divs
+.innerbody {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, .7);
+  margin: 20px;
   color: white;
 }
 
-
-.logo1 img {
-  height: 100px;
-  margin-top: 10px;
-}
-
-.logo2 img {
-  height: 50px;
-  margin-top: 60px;
-  margin-left: -6px;
-}
-
+//Entire Navbar
 .nav-bar {
+  height: 100px;
   width: 100%;
   margin: 0;
   padding: 0px;
   background-color: #3d3c3c;
   color: white;
-  // border-bottom: 5px solid green;
+  border-bottom: 5px solid #185118;
+}
+
+// PPatch Logo
+.logo1 {
+  margin-top: 10px;
+  padding-left: 20px;
+  display: inline-block;
+  color: white;
+}
+
+.logo1:hover {
+  color: #86bc76;
+  text-decoration: none;
 }
 
 .nav-bar span {
@@ -50,7 +71,7 @@
 
 .link-header {
   float: right;
-  padding: 50px 20px;
+  padding: 40px 20px 0 20px;
   font-size: 16px;
 }
 
@@ -61,7 +82,7 @@
 
 .signin-header {
   float: right;
-  margin: 50px 20px;
+  margin: 40px 20px 0 20px;
   font-size: 16px;
 }
 
@@ -72,4 +93,10 @@
 .container {
   text-align: center;
   margin-top: 140;
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-bar {
+    height: 210px;
+  }
 }

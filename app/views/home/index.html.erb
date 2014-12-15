@@ -1,5 +1,28 @@
-<div id="bigdiv">
-  <div class='leftbox'>
-    <h2> Welcome to our community garden site </h2>
+<div class="container-fluid">
+  <div id="bigdiv">
+    <div class="row">
+      <div class='leftbox col-md-8'>
+        <h2>Welcome to our community garden site </h2>
+        <div class = "innerbody">
+          <% @blogposts.each do |post| %>
+            <h3><%= post.title %></h3>
+            <p>
+              <%= post.content %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="rightbox col-md-4">
+        <h2>Upcoming Events</h2>
+        <div class="innerbody">
+          <% @events.each do |event| %>
+          <%= event.title %>
+          <hr>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
